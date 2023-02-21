@@ -1,0 +1,1498 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt&display=swap");
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.page {
+  background-repeat: repeat-y;
+  background-size: cover;
+  background: rgb(182, 218, 255);
+  overflow-x: auto;
+  min-width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+a {
+  color: rgb(2, 189, 46);
+}
+
+a:hover {
+  color: #2dd021c6;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: rgb(239, 238, 238);
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+/* ------------------------------------------------------- ApprovalSurveys.js ------------------------------------------------------- */
+
+.div-approvalSurveys {
+  display: inline-block;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  left: 5%;
+  gap: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* ------------------------------------------------------- SurveyCard.js ------------------------------------------------------- */
+
+.card-awaitingApproval {
+  padding: 0px;
+  width: 200px;
+  min-height: 220px;
+  border-radius: 20px;
+  background: #ffffff;
+  text-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button-viewSurvey {
+  background-color: #2873ff;
+  border-radius: 4px;
+  color: white;
+  border-color: transparent;
+  width: 165px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+.button-FillOut,
+.button-FillOut-User {
+  background: #2873ff;
+  border-radius: 4px;
+  color: white;
+  border-color: transparent;
+  width: 80px;
+  height: 30px;
+}
+
+.button-FillOut-User {
+  width: 135px;
+}
+
+.button-viewSurvey:hover,
+.button-FillOut:hover,
+.button-FillOut-User:hover {
+  background-color: #095fff;
+}
+
+.button-approve {
+  background-color: #22c55e;
+  border-radius: 4px;
+  color: white;
+  border-color: transparent;
+  width: 80px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.button-approve:hover {
+  background-color: #08e359;
+}
+
+.button-deny {
+  background-color: #ef4444;
+  border-radius: 4px;
+  color: white;
+  border-color: transparent;
+  width: 80px;
+  height: 30px;
+}
+
+.card-activeSurvey {
+  width: 200px !important;
+  min-height: 188px !important;
+  border-radius: 20px !important;
+  text-align: center;
+  padding: 0px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.viewResults {
+  background: #22c55e;
+  color: white;
+  height: 30px;
+  width: 135px;
+  border-radius: 4px;
+  border-color: transparent;
+}
+
+.viewResults:hover {
+  background-color: #15ef4c;
+}
+
+.viewResults:active {
+  background-color: #10cc3f;
+}
+
+.div-InnerSurveyCard {
+  position: absolute;
+  margin: auto;
+  right: 0%;
+  bottom: 5%;
+}
+
+.div-Active,
+.div-SurveyCard-Results {
+  position: absolute;
+  margin: auto;
+  left: 8.5%;
+  bottom: 9%;
+}
+
+.marginTop-0 {
+  margin-top: 0px;
+}
+/* ------------------------------------------------------- SurveyCard.js and ModalBox.js ------------------------------------------------------- */
+
+.button-delete-modalBox:hover,
+.button-delete-single:hover,
+.button-deny:hover {
+  background-color: #cf0404;
+}
+
+/* ------------------------------------------------------- DetailsSurvey.js ------------------------------------------------------- */
+
+.div-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+  margin: auto;
+  padding-top: 0px;
+  padding-bottom: 6px;
+  width: 165px;
+}
+
+.div-number {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  background: transparent;
+  gap: 5px;
+  width: 52px;
+  height: 40px;
+  padding-bottom: 5px;
+}
+
+/* ----------------------------------------------- Sign-In.js and Sign-Up.js ----------------------------------------------- */
+
+.sign-in,
+.sign-up {
+  font-size: 20px;
+  text-align: center;
+  background-color: white;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 10px;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+
+.sign-in {
+  max-width: 550px;
+  min-width: 300px;
+  min-height: 550px;
+  margin-top: 96px;
+  margin-bottom: 96px;
+}
+
+.sign-up {
+  max-width: 550px;
+  min-width: 300px;
+  min-height: 660px;
+  margin-top: 46px;
+  margin-bottom: 46px;
+}
+
+.sign-in input,
+.sign-up input {
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: 2px solid black;
+  background-color: transparent;
+  outline: none;
+  width: 51%;
+}
+
+.sign-in input:focus,
+.sign-up input:focus {
+  outline: none;
+}
+
+.sign-in input::placeholder,
+.sign-up input::placeholder,
+.searchInput::placeholder {
+  color: rgb(173, 173, 173);
+}
+
+.sign-in h1,
+.sign-up h1 {
+  font-family: "Prompt", sans-serif;
+  color: rgb(182, 218, 255);
+  font-size: 90px;
+  margin-top: 35px;
+}
+
+.alert-signIn,
+.alert-signUp {
+  position: absolute !important;
+  margin: 0 auto !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 55%;
+  height: 60px;
+  min-height: 60px;
+  font-size: calc(14px + 0.1vmin);
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alert-signIn {
+  top: 165px;
+}
+
+.alert-signUp {
+  top: 107px;
+}
+
+.div-alert {
+  display: table-row;
+}
+
+/* ----------------------------------------- FormSignIn.js and FormSignUp.js ----------------------------------------- */
+
+.icons-signUpIn {
+  padding: 0px;
+  margin-right: 5px;
+}
+
+/* ------------------------------------ FormSignIn.js, FormSignUp.js ------------------------------------ */
+
+.button-login {
+  border: transparent;
+  background-color: #0ecc00;
+  color: white;
+  border-radius: 5px;
+  width: 56%;
+  height: 40px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.button-login:active {
+  background-color: #14c907c6;
+}
+
+/* ----------------------------------------- FormSignIn.js and Sign-Up.js ----------------------------------------- */
+
+.newUser {
+  color: rgb(0, 64, 255);
+}
+
+.span-SignUpIn {
+  color: #0ecc00;
+  text-decoration: none;
+}
+
+.span-SignUpIn:hover {
+  color: #29ef1b;
+}
+
+.span-SignUpIn:active {
+  color: #0ecc00;
+}
+
+/* ------------------------------------------------------- Sign-Up.js ------------------------------------------------------- */
+
+.sign-up h1 {
+  color: rgb(182, 218, 255);
+  margin-top: 5px;
+  font-size: 70px;
+}
+
+.div-form-signUp {
+  margin-top: 10px;
+}
+
+/* ------------------------------------------------------- AddSurvey.js ------------------------------------------------------- */
+
+.div-addSurvey {
+  display: flex;
+  width: 99%;
+  flex-direction: row;
+  position: absolute;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: white;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 50px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  width: 25%;
+  min-height: 750px;
+  background-color: #5fafff;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+
+.h5-addSurvey {
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(166, 255, 163);
+}
+
+.addSurvey {
+  position: relative;
+  font-size: 20px;
+  color: white;
+  background-color: #1b7aeb;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 50px;
+  max-width: 1000px;
+  min-width: 310px;
+  min-height: 750px;
+  max-height: 1500px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  width: 75%;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+
+.addSurvey input {
+  width: 40%;
+}
+
+.textAlign-center {
+  text-align: center;
+}
+
+.li-addSurvey {
+  margin-top: 15px;
+}
+
+.button-addAnswer,
+.button-cancel {
+  border: 0;
+  color: white;
+  font-size: 22px;
+  padding: 6px 25px;
+  border-radius: 5px;
+  background-color: #89b9ef;
+}
+
+.button-addAnswer {
+  background-color: #89b9ef;
+  margin-top: 10px;
+}
+
+.button-addAnswer:disabled {
+  background-color: #b8cfea;
+}
+
+.button-cancel {
+  margin-left: 5px;
+  background-color: #ef4444;
+}
+
+.button-cancel:hover {
+  margin-left: 5px;
+  background-color: #f11c1c;
+}
+
+.ul-addSurvey {
+  list-style: none;
+  padding: 0;
+}
+
+.message-addSurvey {
+  margin-left: 1.5%;
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 1350px) {
+  .div-addSurvey {
+    flex-direction: column;
+  }
+  .questions {
+    position: relative;
+    font-size: 20px;
+    color: white;
+    background-color: #5fafff;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 50px;
+    max-width: 1000px;
+    min-width: 310px;
+    min-height: 150px;
+    max-height: 1500px;
+    margin-top: 35px;
+    width: 75%;
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+      0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* ------------------------------------------------------- AddSurvey.js ------------------------------------------------------- */
+
+.div-add-answers {
+  display: table;
+}
+
+.div-add-QuestionAnswer {
+  display: table-cell;
+}
+
+.line-addSurvey {
+  margin-right: 15px;
+}
+
+.span-answer {
+  width: 91.668%;
+  display: inline;
+  display: table-cell;
+  word-break: break-word;
+}
+
+.div-buttons-answers {
+  margin-left: 5px;
+  height: 26.8px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.button-delete {
+  background-color: transparent;
+  float: right;
+  border: 0px;
+  padding: 0px;
+}
+
+.icon-edit:hover {
+  color: #f2a100 !important;
+}
+
+.icon-delete:hover {
+  color: #c3c3c3 !important;
+}
+
+.icon-edit:active,
+.icon-delete:active {
+  color: white !important;
+}
+
+/* ------------------------------------------------------- Share.js ------------------------------------------------------- */
+
+.button-share {
+  border: none;
+  padding: 0;
+  background: transparent;
+  margin-bottom: 2px;
+}
+
+.icon-share:hover {
+  color: #f29900;
+}
+
+/* --------------------- FormAddAnswer.js, FormEditQuestion, FormNewQuestion.js and FormPostSurvey.js --------------------- */
+
+.input-question,
+.surveyTitle {
+  border: 0px;
+  width: 40%;
+  color: white;
+  background: transparent;
+  padding: 7px 0px;
+  border-bottom: 1px solid white;
+}
+
+.input-question {
+  padding: 7px 0px;
+}
+
+/* ----------------------------------------- FormAddAnswer.js and FormEditQuestion ----------------------------------------- */
+
+.button-check {
+  float: right;
+  border: 0;
+  color: white;
+  border-radius: 5px;
+  padding: 6px 12px;
+  background-color: #22c55e;
+}
+
+.button-check:hover {
+  background-color: #17dd60;
+}
+
+/* ------------------------------------------------------- FormNeQuestion.js ------------------------------------------------------- */
+
+.button-saveAndNew {
+  float: right;
+  border: 0;
+  color: white;
+  padding: 6px 25px;
+  border-radius: 5px;
+  background-color: #89b9ef;
+  font-size: 22px;
+}
+
+/* ------------------------------------------------------- AddAnswer.js and FormNeQuestion.js ------------------------------------------------------- */
+
+.button-addAnswer:hover,
+.button-saveAndNew:hover {
+  background-color: #70b2fe;
+}
+
+/* ------------------------------------------------------- FormPostSurvey.js ------------------------------------------------------- */
+
+.button-postSurvey {
+  float: right;
+  border: 0;
+  color: white;
+  font-size: 22px;
+  padding: 6px 25px;
+  border-radius: 5px;
+  background-color: #22c55e;
+  transition: 0.3s all ease-out;
+}
+
+.button-postSurvey:hover {
+  background-color: #d8bf06;
+}
+
+.button-postSurvey:active {
+  background-color: #22c55e;
+  color: white;
+}
+
+.success,
+.failure {
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  padding: 5px;
+}
+
+.success {
+  border: 2px solid rgb(66, 255, 66);
+  background-color: rgba(38, 252, 124, 0.715);
+}
+
+.failure {
+  border: 2px solid rgb(247, 36, 36);
+  background-color: rgba(247, 36, 36, 0.715);
+}
+
+.float-right {
+  float: right;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.input-date {
+  float: right;
+  height: 45px;
+  bottom: 2px;
+  padding: 13px 0 0 0;
+  width: 100% !important;
+  border-radius: 2px;
+  border: 1px solid rgb(163, 163, 163);
+}
+
+.floating-label {
+  position: absolute;
+  color: black;
+  left: 4.3px;
+  top: 0;
+  font-size: 12px;
+}
+
+/* ------------------------------------------------- Main.js and Menu.js ------------------------------------------------- */
+
+.clicked {
+  width: 50%;
+  height: 41px;
+  left: 338px;
+  top: 246px;
+  background: #ffffff;
+  border-radius: 3px;
+  border: transparent;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+
+.default {
+  width: 50%;
+  min-height: 41px;
+  left: 338px;
+  top: 246px;
+  background: transparent;
+  border-radius: 3px;
+  border: transparent;
+}
+
+/* --------------------------------------------- Main.js and RequestStatus.js --------------------------------------------- */
+
+.hr-main {
+  background: white;
+  color: white;
+  border-color: white;
+  height: 3px;
+  min-width: 300px;
+}
+
+/* ------------------------------------------------------- Main.js ------------------------------------------------------- */
+
+.div-main {
+  margin-top: 15px;
+}
+
+.div-activeSurveys {
+  margin: auto;
+  overflow: hidden;
+  padding-bottom: 25px;
+}
+
+.button-addSurvey {
+  float: right;
+  font-size: 16px;
+  height: 25px;
+  background-color: #314ddf;
+  width: 125px;
+  height: 32px;
+  border-radius: 5px;
+  color: white;
+  border: transparent;
+  margin-right: 10px;
+  transition: 0.3s all ease-out;
+}
+
+.button-addSurvey:hover {
+  background-color: white;
+  color: #314ddf;
+  border: 1px solid #314ddf;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+
+.button-addSurvey:active {
+  background-color: #314ddf;
+  color: white;
+  box-shadow: none;
+}
+
+/* ------------------------------------------------------ Spinner.js ------------------------------------------------------ */
+
+.spinner {
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1;
+  height: 50px;
+  width: 50px;
+  color: white;
+}
+
+/* ------------------------------------------------------- Menu.js ------------------------------------------------------- */
+
+.menu {
+  width: 90%;
+  min-height: 40px;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.div-options {
+  width: 250px;
+  height: 41px;
+  left: 223px;
+  top: 239px;
+  background: #f7f9fc;
+  border-radius: 3px;
+  margin-left: 20px;
+}
+
+.div-search {
+  margin: auto;
+  width: 260px;
+  height: 40px;
+  background: #fefdfe;
+  border-radius: 10px;
+}
+
+.searchInput {
+  width: 228px;
+  height: 40px;
+  padding-left: 10px;
+  background: #fefdfe;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: transparent;
+}
+
+.button-search {
+  width: 32px;
+  height: 32px;
+  left: 926px;
+  top: 464px;
+  background-color: #5179ef;
+  border-radius: 100%;
+  border: transparent;
+  color: white;
+}
+
+.icon-search {
+  margin-bottom: 4px;
+}
+
+.button-search:hover {
+  background-color: #285eff;
+}
+
+.button-search:active {
+  background: #5179ef;
+}
+
+.div-sortBy {
+  margin-right: 20px;
+  width: 308px !important;
+}
+
+.select-main {
+  width: 308px !important;
+}
+
+/* ---------------------------------------------------- Questions.js ---------------------------------------------------- */
+
+.div-questions {
+  display: flex;
+  margin-top: 10px;
+}
+
+.div-question {
+  text-align: left;
+  border: none;
+  color: white;
+  word-break: break-word;
+  margin-top: 1px;
+  background-color: transparent;
+}
+
+.button-x {
+  border: none;
+  padding: 0;
+  margin-left: auto;
+  margin-top: -4.5px;
+  height: 26px;
+  background-color: transparent;
+}
+
+.icon-x {
+  margin-top: 10px;
+}
+
+/* ------------------------------------------------------- Surveys.js ------------------------------------------------------- */
+
+.div-surveys {
+  width: 100%;
+}
+
+.div-survey {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  gap: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.h1-main {
+  text-align: center;
+  margin-left: 5px;
+  margin-bottom: 20px;
+}
+
+.img-surveys {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.span-surveys {
+  display: block;
+  color: white;
+  font-size: 21px;
+  text-align: center;
+}
+
+/* ------------------------------------------------------- Request.js ------------------------------------------------------- */
+
+.td-request {
+  color: white !important;
+  padding-top: 10px;
+}
+
+/* ---------------------------------------------------- TableRequests.js ---------------------------------------------------- */
+
+.table {
+  font-size: 15.5px;
+  max-width: 835px;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.tr-head-request {
+  background: white;
+}
+
+.th-request {
+  color: #ff9633;
+}
+
+/* ------------------------------------------------------- ResultsSurvey.js and Survey.js ------------------------------------------------------- */
+
+.h1-surveyname {
+  min-width: 310px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: "Bitter";
+  font-style: normal;
+
+  word-break: break-word;
+}
+
+/* ------------------------------------------------------- ButtonBack.js ------------------------------------------------------- */
+
+.button-back {
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  font-size: 26px;
+  background: white;
+  float: left;
+  margin-left: 15px;
+  border: 3px solid #2563eb;
+  color: #2563eb;
+  bottom: 5%;
+  position: absolute;
+}
+
+.arrow-back {
+  margin-bottom: 8.5px;
+  margin-left: -2px;
+}
+
+/* ------------------------------------------------------- ButtonNext.js ------------------------------------------------------- */
+
+.button-next {
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  font-size: 26px;
+  background: white;
+  margin-right: 50px;
+  float: right;
+  border: 3px solid #2563eb;
+  color: #2563eb;
+  right: -20px;
+  bottom: 5%;
+  position: absolute;
+}
+
+.arrow-next {
+  margin-bottom: 8.5px;
+  margin-left: 2px;
+}
+
+/* ------------------------------------------------------- ResultsSurvey.js ------------------------------------------------------- */
+
+.button-end {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  font-size: 18px;
+  background: white;
+  color: #2563eb;
+  font-weight: 600;
+  margin-right: 50px;
+  float: right;
+  border: 3px solid #2563eb;
+  right: -20px;
+  bottom: 5%;
+  position: absolute;
+}
+
+.button-back:hover,
+.button-next:hover,
+.button-end:hover,
+.button-send:hover {
+  background: #2563eb;
+  color: white;
+}
+
+.button-back:active,
+.button-next:active,
+.button-end:active,
+.button-send:active {
+  background: white;
+  color: #2563eb;
+}
+.card-results {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px !important;
+  max-width: 565px !important;
+  min-width: 310px !important;
+  min-height: 500px !important;
+  margin: 0 auto;
+  margin-top: 29px;
+  margin-bottom: 29px;
+}
+
+.card-body {
+  position: relative;
+}
+
+.div-chart {
+  text-align: center;
+}
+
+.h3-results {
+  max-width: 500px;
+  text-align: left;
+  margin: auto;
+  word-wrap: break-word;
+}
+
+/* ------------------------------------------------------- AnswerValue.js ------------------------------------------------------- */
+
+.div-answerValue {
+  position: absolute;
+  right: 0;
+  top: 11px;
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------- Chart.js ------------------------------------------------------- */
+
+.chart,
+.chartMax {
+  max-width: 500px;
+  height: 50px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 15px;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.chart {
+  background-color: rgba(0, 85, 255, 0.2);
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+.chartMax {
+  background-color: rgba(0, 255, 34, 0.2);
+}
+
+.innerChart {
+  background-color: rgba(0, 85, 255, 0.5);
+  height: 50px;
+  position: absolute;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.innerChartMax {
+  background-color: rgba(0, 255, 34, 0.5);
+  height: 50px;
+  position: absolute;
+  border-top-left-radius: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.div-results-answers {
+  margin-bottom: 60px;
+}
+
+/* ------------------------------------------------------- InnerChart.js ------------------------------------------------------- */
+
+.div-results-answer {
+  position: absolute;
+  top: 11px;
+  margin-left: 10px;
+  font-weight: 600;
+  display: flex;
+  white-space: nowrap;
+  width: var(--main-width);
+}
+
+/* ------------------------------------------------------- Survey.js ------------------------------------------------------- */
+
+.button-send {
+  height: 50px;
+  width: 80px;
+  font-size: 26px;
+  background: white;
+  margin-right: 50px;
+  float: right;
+  bottom: 5%;
+  position: absolute;
+  right: -20px;
+  font-weight: 600;
+  border-radius: 5px;
+  color: #2563eb;
+  border: 3px solid #2563eb;
+}
+
+.div-fillingOutSurvey {
+  font-size: 20px;
+  background-color: white;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  max-width: 700px;
+  min-width: 310px;
+  min-height: 627px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 160px;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+
+.h1-survey {
+  margin: auto;
+  padding-top: 35px;
+  max-width: 610px;
+  min-width: 20px;
+  word-wrap: break-word;
+}
+
+.alert-survey {
+  margin: auto;
+  width: 51%;
+  font-size: 16px;
+}
+
+.div-answers {
+  margin: auto;
+  margin-top: 20px;
+  max-width: 650px;
+  min-height: 280px;
+}
+
+/* ------------------------------------------------------- Answer.js ------------------------------------------------------- */
+
+.div-answer {
+  margin-top: 10px;
+  padding-top: 0px !important;
+  display: flex;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.radio {
+  position: absolute;
+  width: 8%;
+  top: 11px;
+}
+
+.label-answer {
+  width: 92%;
+  margin-left: 8%;
+}
+
+/* ------------------------------------------------------- ShareSurvey.js ------------------------------------------------------- */
+
+.div-shareSurvey {
+  max-width: 710px;
+  min-width: 310px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div-img {
+  margin: auto;
+  width: 256px;
+  height: 256px;
+}
+
+.div-shareButton {
+  gap: 15px;
+  justify-content: space-between;
+  max-width: 350px;
+  min-height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ------------------------------------------------------- ModalBox.js and Navbar.js ------------------------------------------------------- */
+
+.nav-buttons {
+  background-color: transparent;
+  border-color: transparent;
+  font-size: 20px;
+  color: white;
+  text-align: left;
+}
+
+/* ------------------------------------------------------- ModalBox.js ------------------------------------------------------- */
+
+.button-delete-modalBox,
+.button-delete-single {
+  background-color: #dc2626;
+  border-radius: 4px;
+  color: white;
+  border-color: transparent;
+  width: 80px;
+  height: 30px;
+}
+
+.button-delete-single {
+  width: 135px;
+}
+
+.deleteIcon {
+  color: white;
+}
+
+.disabledStyle,
+.enabledStyle {
+  position: relative;
+  border-radius: 100%;
+  left: 0.7%;
+  height: 45px;
+  width: 45px;
+  border: none;
+}
+
+.disabledStyle {
+  background-color: rgba(255, 255, 255, 0.675);
+}
+
+.enabledStyle {
+  background-color: white;
+}
+
+.enabledStyle:hover {
+  background-color: #b2b2b290;
+}
+
+.enabledStyle:active {
+  background-color: #858585ae;
+}
+
+/* ------------------------------------------------------- Navbar.js ------------------------------------------------------- */
+
+.navbar {
+  background-color: #1b7aeb;
+  min-width: 320px;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.div-surveysCenter {
+  display: inline-block;
+  margin-top: 2px;
+  margin-left: 5px;
+  font-weight: 500;
+  color: white;
+  font-size: 22px;
+}
+
+/* ------------------------------------------------------- @media ------------------------------------------------------- */
+
+@media only screen and (min-width: 1325px) {
+  .div-approvalSurveys {
+    width: 1325px;
+  }
+}
+
+@media only screen and (max-width: 1325px) {
+  .div-approvalSurveys {
+    width: 1150px;
+  }
+}
+
+@media only screen and (min-width: 1321px) {
+  .div-activeSurveys {
+    width: 1320px;
+  }
+}
+
+@media only screen and (max-width: 1320px) {
+  .div-activeSurveys {
+    width: 1150px;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .div-approvalSurveys {
+    width: 875px;
+  }
+  .div-activeSurveys {
+    width: 880px;
+  }
+  .div-search {
+    margin-top: 0px;
+  }
+  .div-sortBy {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .div-activeSurveys {
+    width: 660px;
+  }
+
+  .div-options,
+  .div-search,
+  .div-sortBy {
+    margin: auto;
+  }
+
+  .div-options {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  .div-approvalSurveys {
+    width: 662px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .input-question,
+  .surveyTitle {
+    width: 75% !important;
+    margin-bottom: 15px;
+  }
+
+  .button-saveAndNew,
+  .button-postSurvey {
+    float: left;
+  }
+
+  .button-saveAndNew {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .input-date {
+    margin-left: 0px;
+  }
+  .float-right {
+    float: left;
+  }
+  .li-addSurvey {
+    margin-top: 46px;
+  }
+}
+
+@media only screen and (max-width: 662px) {
+  .div-approvalSurveys {
+    width: 430px;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .div-activeSurveys {
+    width: 440px;
+  }
+
+  .div-options {
+    width: 200px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+
+  .div-search {
+    margin-bottom: 20px;
+  }
+  .clicked {
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 532px) {
+  .button-end {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    font-size: 18px;
+    background: white;
+    color: #2563eb;
+    font-weight: 600;
+    margin-right: 50px;
+    float: right;
+    border: 3px solid #2563eb;
+    right: -35px;
+    bottom: 5%;
+    position: absolute;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .div-activeSurveys {
+    width: 310px;
+  }
+  select {
+    width: 266px !important;
+  }
+
+  .card-activeSurvey {
+    margin: auto;
+  }
+  .h1-main {
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+  .div-options {
+    width: 150px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  .clicked {
+    height: 50px;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .floating-label {
+    top: 6px;
+  }
+  .noResults {
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 437px) {
+  .input-date {
+    float: left;
+    margin-top: 5px;
+  }
+
+  .button-addAnswer {
+    margin-bottom: 15px;
+  }
+
+  .button-cancel {
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .div-approvalSurveys {
+    width: 310px;
+  }
+
+  .card-awaitingApproval {
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 268px) {
+  .page {
+    overflow-x: scroll;
+  }
+}

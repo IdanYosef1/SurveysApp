@@ -1,0 +1,36 @@
+.html,
+body {
+  min-height: 180vh;
+  background: rgb(182, 218, 255);
+}
+
+#root {
+  min-height: 100vh;
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  background: rgb(182, 218, 255);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: rgb(182, 218, 255);
+  /*background: url("banner.png") 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;*/
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

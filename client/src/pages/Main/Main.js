@@ -9,7 +9,7 @@ import SurveyCard from "../../Components/Cards/SurveyCard";
 import MainSpinner from "./Spinner";
 
 const urlSurveys = process.env.REACT_APP_SURVEYS_URL;
-const urlAnswerings = "http://localhost:8001/api/answerings";
+const urlAnswerings = process.env.REACT_APP_ANSWERINGS_URL;
 
 function Main() {
   let history = useHistory();

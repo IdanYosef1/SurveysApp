@@ -7,7 +7,7 @@ const Share = ({ surveyId, surveyName }) => {
     <div>
       <RWebShare
         data={{
-          url: `http://localhost:3000/survey/${surveyId}`,
+          url: `https://surveysapp-frontend.onrender.com/survey/${surveyId}`,
           title: `Survey ${surveyName}`,
         }}
         onClick={() => console.log("shared successfully!")}

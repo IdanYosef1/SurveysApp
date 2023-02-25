@@ -27,35 +27,35 @@ function ShareSurvey() {
       </h2>
       <div className="div-shareButton">
         <WhatsappShareButton
-          url={`http://localhost:3000/${id}`}
+          url={`https://surveysapp-frontend.onrender.com/survey/${id}`}
           hashtag={"#opjiohib"}
         >
           <WhatsappIcon size={50} round={true} />
         </WhatsappShareButton>
 
         <FacebookShareButton
-          url={`http://localhost:3000/${id}`}
+          url={`https://surveysapp-frontend.onrender.com/survey/${id}`}
           hashtag={"#opjiohib"}
         >
           <FacebookIcon size={50} round={true} />
         </FacebookShareButton>
 
         <EmailShareButton
-          url={`http://localhost:3000/${id}`}
+          url={`https://surveysapp-frontend.onrender.com/survey/${id}`}
           hashtag={"#opjiohib"}
         >
           <EmailIcon size={50} round={true} />
         </EmailShareButton>
 
         <TwitterShareButton
-          url={`http://localhost:3000/${id}`}
+          url={`https://surveysapp-frontend.onrender.com/survey/${id}`}
           hashtag={"#opjiohib"}
         >
           <TwitterIcon size={50} round={true} />
         </TwitterShareButton>
 
         <TelegramShareButton
-          url={`http://localhost:3000/${id}`}
+          url={`https://surveysapp-frontend.onrender.com/survey/${id}`}
           hashtag={"#opjiohib"}
         >
           <TelegramIcon size={50} round={true} />

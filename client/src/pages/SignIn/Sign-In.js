@@ -34,7 +34,7 @@ function SignIn() {
   const sendData = async (e) => {
     e.preventDefault();
     try {
-      const found = (await login(urlUsers, user, store.token)).data;
+      const found = (await login(urlUsers, user)).data;
       isSendSuccess(found);
     } catch (err) {
       console.log(err);

@@ -33,10 +33,10 @@ function Menu({
   const options = [
     { value: "1", label: "Upload date (oldest to newest)" },
     { value: "2", label: "Upload date (newest to oldest)" },
-    { value: "3", label: "number of participant (high to low)" },
-    { value: "4", label: "number of participant (low to high)" },
-    { value: "5", label: "Expired date (high to low)" },
-    { value: "6", label: "Expired date (low to high)" },
+    { value: "3", label: "Number of participant (high to low)" },
+    { value: "4", label: "Number of participant (low to high)" },
+    { value: "5", label: "Expired date (early to later)" },
+    { value: "6", label: "Expired date (later to early)" },
   ];
 
   return (

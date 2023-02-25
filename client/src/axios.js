@@ -16,7 +16,7 @@ const getById = (url, id, token) => axios.get(`${url}/${id}`, config(token));
 const getAwaitingApprovalById = (url, userId, surveyId, token) =>
   axios.get(`${url}/${userId}/${surveyId}`, config(token));
 
-const login = (url, obj, token) => axios.post(`${url}/login`, obj, config(token));
+const login = (url, obj) => axios.post(`${url}/login`, obj);
 
 const createData = (url, obj, token) => axios.post(url, obj, config(token));
 
@@ -41,9 +41,11 @@ const deleteStatus = (url, userId, arr, token) =>
 const deleteAllStatus = (url, userId, token) =>
   axios.delete(`${url}/status/${userId}`, config(token));
 
-const deleteData = (url, id, token) => axios.delete(`${url}/${id}`, config(token));
+const deleteData = (url, id, token) =>
+  axios.delete(`${url}/${id}`, config(token));
 
-const deleteAll = (url, id, token) => axios.delete(`${url}/${id}/1`, config(token));
+const deleteAll = (url, id, token) =>
+  axios.delete(`${url}/${id}/1`, config(token));
 
 export {
   getAll,

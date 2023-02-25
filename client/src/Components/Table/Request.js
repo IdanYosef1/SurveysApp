@@ -23,10 +23,10 @@ function Request({ request, callBack, removeFromArr, isAll, clickedAll }) {
 
   const color =
     request.requestStatus === "aprroved"
-      ? "#36EC0D"
+      ? "#29e36d"
       : request.requestStatus === "pendingApproval"
       ? "#006DF8"
-      : "#F12413";
+      : "#e21d0b";
 
   return (
     <tr style={{ background: color }}>

@@ -386,6 +386,23 @@ input::placeholder {
   font-size: 20px;
   color: white;
   border-radius: 10px;
+  min-height: 750px;
+  width: 25%;
+  margin: 0 auto;
+  padding: 50px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  background-color: #5fafff;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+
+/*.questions {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: white;
+  border-radius: 10px;
   margin: 0 auto;
   padding: 50px;
   margin-top: 35px;
@@ -395,7 +412,7 @@ input::placeholder {
   background-color: #5fafff;
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
     0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
-}
+}*/
 
 .h5-addSurvey {
   margin-left: auto;
@@ -917,6 +934,10 @@ input::placeholder {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid transparent;
 }
 
 .tr-head-request {

@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import MainDashboardEntry from "./Components/Utilities/MainDashboardEntry";
 import AddSurvey from "./pages/AddSurvey/AddSurvey";
 import ApprovalSurveys from "./pages/ApprovalSurveys/ApprovalSurveys";
@@ -9,10 +9,11 @@ import SignIn from "./pages/SignIn/Sign-In";
 import SignUp from "./pages/SignUp/Sign-Up";
 import Survey from "./pages/Survey/Survey";
 import ProtectedRoute from "./Components/ProtectedRoutes/ProtectedRoute";
+import { HashRouter as Router } from "react-router-dom";
 
 function AppRouter() {
   return (
-    <Switch>
+    <Router>
       <Route path="/" component={SignIn} exact />
       <Route path="/sign-up" component={SignUp} />
       <ProtectedRoute path="/main" component={MainDashboardEntry} />
@@ -23,7 +24,7 @@ function AppRouter() {
       <ProtectedRoute path="/approvalOfSurveys" component={ApprovalSurveys} />
       <ProtectedRoute path="/requestStatus" component={RequestStatus} />
       <ProtectedRoute path="/shareSurvey/:id" component={ShareSurvey} />
-    </Switch>
+    </Router>
   );
 }
 

@@ -1,7 +1,7 @@
 import { Card } from "react-bootstrap";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import history from "../../myCreatedHistory";
 import React from "react";
 import { nanoid } from "nanoid";
 import Chart from "../../Components/Charts/Chart";
@@ -11,7 +11,6 @@ import ButtonBack from "../../Components/Buttons/ButtonBack";
 function ResultsSurvey() {
   const store = useSelector((state) => state.currentSurvey);
   const [i, setI] = useState(0);
-  let history = useHistory();
   const colors = ["#53829F", "#5DADE2", "#2E86C1", "#21618C", "#154360"];
 
   const nextResult = () => {

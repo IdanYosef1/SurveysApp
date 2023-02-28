@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getAll,
@@ -12,6 +12,7 @@ import Alert from "react-bootstrap/Alert";
 import { useEffect } from "react";
 import Answer from "../../Components/Answer/Answer";
 import ButtonNext from "../../Components/Buttons/ButtonNext";
+import history from "../../myCreatedHistory";
 
 const urlUsers = process.env.REACT_APP_USERS_URL;
 const urlSurveys = process.env.REACT_APP_SURVEYS_URL;
@@ -20,7 +21,6 @@ const urlAnswerings = process.env.REACT_APP_ANSWERINGS_URL;
 function Survey() {
   const store = useSelector((state) => state);
   const dispatch = useDispatch();
-  let history = useHistory();
   const [inputCheckBox, setInput] = useState(null);
   const [isFilled, setIsFilled] = useState(false);
   const [message, setMessage] = useState("");

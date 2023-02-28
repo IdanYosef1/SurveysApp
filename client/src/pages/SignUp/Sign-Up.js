@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { createData } from "../../axios";
 import { useSelector } from "react-redux";
 import FormSignUp from "../../Components/Forms/FormSignUp";
 import Alert from "react-bootstrap/Alert";
+import history from "../../myCreatedHistory";
 
 const urlUsers = process.env.REACT_APP_USERS_URL;
 const urlAnswerings = process.env.REACT_APP_ANSWERINGS_URL;
 
 function SignUp() {
-  let history = useHistory();
   const [message, setMessage] = useState("");
   const [user, setUser] = useState({
     username: "",

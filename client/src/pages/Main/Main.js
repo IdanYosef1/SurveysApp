@@ -1,4 +1,4 @@
-import { useHistory } from "react-router-dom";
+import history from "../../myCreatedHistory";
 import { useEffect } from "react";
 import { useState } from "react";
 import { getAll } from "../../axios";
@@ -12,7 +12,6 @@ const urlSurveys = process.env.REACT_APP_SURVEYS_URL;
 const urlAnswerings = process.env.REACT_APP_ANSWERINGS_URL;
 
 function Main() {
-  let history = useHistory();
   const store = useSelector((store) => store);
   const [surveys, setSurveys] = useState({
     all: [],

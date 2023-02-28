@@ -8,7 +8,7 @@ function App() {
     <div className="page">
       <Route
         render={({ location }) => {
-          if (location.pathname !== "/" && location.pathname !== "/sign-up")
+          if (location.hash !== "#/" && location.hash !== "#/sign-up")
             return <NavBar />;
         }}
       />

@@ -1,13 +1,13 @@
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { useEffect, useState } from "react";
 import ModalBox from "../Modals/ModalBox";
+import { createHashHistory } from "history";
 
 function NavBar() {
-  let history = useHistory();
+  let history = createHashHistory();
   const store = useSelector((store) => store);
   const [colorsButtons, setColors] = useState({
     main: "white",
@@ -34,6 +34,7 @@ function NavBar() {
       onClick={() => {
         history.push("/approvalOfSurveys");
       }}
+      disabled={history.location.pathname === "/approvalOfSurveys"}
     >
       Approval of surveys
     </button>
@@ -47,6 +48,7 @@ function NavBar() {
       onClick={() => {
         history.push("/requestStatus");
       }}
+      disabled={history.location.pathname === "/requestStatus"}
     >
       Request Status
     </button>
@@ -65,7 +67,7 @@ function NavBar() {
   return (
     <Navbar className="navbar">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand>
           <img
             src={require("../../assets/images/logo.png")}
             width="42"
@@ -89,6 +91,7 @@ function NavBar() {
               onClick={() => {
                 history.push("/main");
               }}
+              disabled={history.location.pathname === "/main"}
             >
               Main
             </button>

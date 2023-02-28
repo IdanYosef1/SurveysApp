@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 import Timer from "../Timer/Timer";
 import { Card } from "react-bootstrap";
 import DetailsSurvey from "../DetailsSurvey/DetailsSurvey";
@@ -18,6 +17,7 @@ import {
   updateSurvey,
 } from "../../Redux/actions";
 import ModalBox from "../Modals/ModalBox";
+import history from "../../myCreatedHistory";
 
 const urlUsers = process.env.REACT_APP_USERS_URL;
 const urlSurveys = process.env.REACT_APP_SURVEYS_URL;
@@ -33,7 +33,6 @@ function SurveyCard({
 }) {
   const store = useSelector((store) => store);
   const dispatch = useDispatch();
-  let history = useHistory();
 
   const fillOut = () => {
     dispatch(updateSurvey(surveyProps));

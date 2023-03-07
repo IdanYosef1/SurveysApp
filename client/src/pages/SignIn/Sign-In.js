@@ -23,7 +23,6 @@ function SignIn() {
       sessionStorage.setItem("isAuth", "true");
       dispatch(updateId(found.userId));
       dispatch(updateToken(found.token));
-      console.log(sessionStorage.getItem("isAuth"));
       history.push("/main");
     } else {
       setMessage("Incorrect email or password");

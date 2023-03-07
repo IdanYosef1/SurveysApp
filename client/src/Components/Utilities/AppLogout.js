@@ -34,12 +34,11 @@ const AppLogout = ({ children }) => {
         window.removeEventListener(item, resetTimer);
       });
       logoutAction();
-    }, 1000000);
+    }, 600000);
   };
 
   const logoutAction = () => {
     if (sessionStorage.getItem("isAuth") === "true") {
-      dispatch(updateToken(""));
       sessionStorage.clear();
       history.push("/");
     }

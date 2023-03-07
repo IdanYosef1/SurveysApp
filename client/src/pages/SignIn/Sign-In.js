@@ -20,9 +20,10 @@ function SignIn() {
 
   const isSendSuccess = (found) => {
     if (found) {
+      sessionStorage.setItem("isAuth", "true");
       dispatch(updateId(found.userId));
       dispatch(updateToken(found.token));
-      sessionStorage.setItem("isAuth", "true");
+      console.log(sessionStorage.getItem("isAuth"));
       history.push("/main");
     } else {
       setMessage("Incorrect email or password");

@@ -32,7 +32,6 @@ function Main() {
 
   useEffect(() => {
     setLoading(true);
-
     async function getSurveys() {
       try {
         const data = (await getAll(urlSurveys, store.token)).data;

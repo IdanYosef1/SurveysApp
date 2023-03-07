@@ -45,7 +45,7 @@ const login = (obj) => {
               },
               process.env.JWT_KEY,
               {
-                expiresIn: "1H",
+                expiresIn: "600s",
               }
             );
             resolve({ userId: user._id, token });

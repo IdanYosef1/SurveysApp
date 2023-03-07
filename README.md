@@ -10,6 +10,25 @@ Only the admin can delete surveys.
 When a user creates a survey then the survey is sent to the admin for approval. Only the admin has the option to approve or disapprove a survey. After a user has sent a request to add a survey then he can check the status of the request.
 In order for the user to register on the website, he must enter the account creation page and fill in the details. A user with an existing username or email or mobile number will not be able to register for the website.
 
+## Live demo
+
+https://surveysapp-frontend.onrender.com/#/
+
+## Technologies
+
+*	Frontend: HTML, CSS, Bootstrap v5.0, Javascript, React, Redux.
+*	BackEnd: Nodejs, Express, Mongoose, cors, JWT.
+*	Database: MongoDB.
+
+## How to run
+
+* Run the command: 'npm i' in the server folder and in the client folder.
+  
+* Run the command: 'node index.js' in terminal for the server folder.
+
+* In mongoDB create a "Surveys" Database and the collection "users".
+
+* Run the React App by entering the command: 'npm start' in the terminal of 'client' folder.
 
 ## Login to the site
 

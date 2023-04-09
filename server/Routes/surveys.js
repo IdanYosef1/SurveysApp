@@ -1,8 +1,6 @@
 const bll = require("../BLL/surveysBLL");
-
 const express = require("express");
 const checkAuth = require("../MiddleWares/checkAuth");
-
 const router = express.Router();
 
 router.get("/", checkAuth, async (req, res) => {

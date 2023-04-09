@@ -36,7 +36,11 @@ function NavBar() {
       }}
       disabled={history.location.pathname === "/approvalOfSurveys"}
     >
-      Approval of surveys
+      <div className="inlineBlock">Approval of surveys</div>
+
+      <div className="div-numOfAwaitingsApproval">
+        {store.awaitingsApproval.length}
+      </div>
     </button>
   );
 

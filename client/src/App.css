@@ -1317,6 +1317,21 @@ input::placeholder {
   font-size: 22px;
 }
 
+.inlineBlock {
+  display: inline-block;
+}
+
+.div-numOfAwaitingsApproval {
+  border: 2px solid orange;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: inline-block;
+  text-align: center;
+  margin-left: 5px;
+  color: orange;
+}
+
 /* ------------------------------------------------------- @media ------------------------------------------------------- */
 
 @media only screen and (min-width: 1325px) {

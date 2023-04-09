@@ -97,10 +97,10 @@ function AddSurvey() {
     }
   };
 
-  const wasCreationSuccess = (response) => {
+  const wasCreationSuccess = (response, msg) => {
     if (response.status === 200) {
-      setIsSuccess("The survey was successfully published");
       setSuccessClass("success");
+      setIsSuccess(msg);
       resetAll();
     } else {
       setIsSuccess("Survey creation failed");
@@ -111,7 +111,7 @@ function AddSurvey() {
   const postOfAdmin = async (obj) => {
     try {
       const response = await createData(urlSurveys, obj, store.token);
-      wasCreationSuccess(response);
+      wasCreationSuccess(response, "The survey was successfully published");
     } catch (err) {
       console.log(err);
     }

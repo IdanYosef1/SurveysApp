@@ -1,6 +1,4 @@
-import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { updateToken } from "../../Redux/actions";
 
 const events = [
   "load",
@@ -13,8 +11,7 @@ const events = [
 
 const AppLogout = ({ children }) => {
   let timer;
-  let history = useHistory();
-  const dispatch = useDispatch();
+  const history = useHistory();
 
   Object.values(events).forEach((item) => {
     window.addEventListener(item, () => {

@@ -47,6 +47,13 @@ const updateFillOut = (bool) => {
   };
 };
 
+const updateAwaitingsApproval = (num) => {
+  return {
+    type: "updateAwaitingsApproval",
+    payload: num,
+  };
+};
+
 export {
   updateSurvey,
   updateId,
@@ -55,4 +62,5 @@ export {
   updateAuthenticated,
   updateBool,
   updateFillOut,
+  updateAwaitingsApproval,
 };

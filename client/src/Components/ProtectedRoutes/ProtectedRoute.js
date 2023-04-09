@@ -4,9 +4,9 @@ function ProtectedRoute({ component: Component, ...restOfProps }) {
   return (
     <Route
       {...restOfProps}
-      render={(props) =>
+      render={() =>
         sessionStorage.getItem("isAuth") === "true" ? (
-          <Component {...props} />
+          <Component {...restOfProps} />
         ) : (
           <Redirect to="/" />
         )

@@ -35,7 +35,7 @@ function Survey() {
     async function getSurvey() {
       try {
         const data =
-          path.slice(1, 18) === "approvalOfSurveys"
+          path.slice(1, 17) === "approvalOfSurvey"
             ? (
                 await getAwaitingApprovalById(
                   urlUsers,
@@ -45,7 +45,6 @@ function Survey() {
                 )
               ).data
             : (await getById(urlSurveys, id, store.token)).data;
-
         setSurvey(data);
         const answeringsData = (await getAll(urlAnswerings, store.token)).data;
         const answering = answeringsData.find(

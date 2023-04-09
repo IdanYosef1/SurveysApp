@@ -1,11 +1,12 @@
 const initialState = {
   currentSurvey: {},
-  answering: {},
   userId: "",
   token: "",
+  answering: {},
   isAuthenticated: false,
   bool: false,
   fillOut: true,
+  awaitingsApproval: [],
 };
 
 const applyChanges = (state = initialState, action) => {
@@ -24,6 +25,8 @@ const applyChanges = (state = initialState, action) => {
       return { ...state, bool: action.payload };
     case "updateFillOut":
       return { ...state, fillOut: action.payload };
+    case "updateAwaitingsApproval":
+      return { ...state, awaitingsApproval: action.payload };
     default:
       return state;
   }

@@ -25,11 +25,12 @@ const urlAnswerings = process.env.REACT_APP_ANSWERINGS_URL;
 
 function SurveyCard({
   surveyProps,
-  update,
   replied,
   answering,
   isActive,
   awaiting,
+  mainBool,
+  setMainBool,
 }) {
   const store = useSelector((store) => store);
   const dispatch = useDispatch();
@@ -86,9 +87,9 @@ function SurveyCard({
   const view = () => {
     dispatch(updateSurvey(surveyProps));
     dispatch(updateFillOut(true));
-    update();
-    history.push(`/approvalOfSurveys/survey/${surveyProps._id}`, {
-      view: true,
+    history.push({
+      pathname: `/approvalOfSurvey/survey/${surveyProps._id}`,
+      state: { view: true },
     });
   };
 
@@ -109,7 +110,7 @@ function SurveyCard({
         },
         store.token
       );
-      update();
+      setMainBool(!mainBool);
     } catch (err) {
       console.log(err);
     }
@@ -131,7 +132,7 @@ function SurveyCard({
         },
         store.token
       );
-      update();
+      setMainBool(!mainBool);
     } catch (err) {
       console.log(err);
     }

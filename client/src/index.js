@@ -3,7 +3,6 @@ import React from "react";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
 import { legacy_createStore as createStore } from "redux";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "@redux-devtools/extension";
@@ -12,6 +11,7 @@ import { persistStore, persistReducer } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import storage from "redux-persist/lib/storage/session";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter } from "react-router-dom";
 
 const persistConfig = {
   key: "root",

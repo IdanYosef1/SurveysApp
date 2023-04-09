@@ -14,7 +14,6 @@ function AddAnswer({ objAnswer, edit, deleteAnswer }) {
           className="button-delete"
           id={objAnswer.id}
           value={objAnswer.id}
-          dit
           onClick={() => edit(objAnswer.id, objAnswer.answer)}
         >
           {" "}

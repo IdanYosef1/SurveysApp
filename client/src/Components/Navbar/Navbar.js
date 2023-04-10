@@ -37,10 +37,11 @@ function NavBar() {
       disabled={history.location.pathname === "/approvalOfSurveys"}
     >
       <div className="inlineBlock">Approval of surveys</div>
-
-      <div className="div-numOfAwaitingsApproval">
-        {store.awaitingsApproval.length}
-      </div>
+      {store.awaitingsApproval.length > 0 ? (
+        <div className="div-numOfAwaitingsApproval">
+          {store.awaitingsApproval.length}
+        </div>
+      ) : null}
     </button>
   );
 

@@ -2,7 +2,8 @@ import { BsFillPeopleFill, BsQuestionCircle } from "react-icons/bs";
 import ReactTooltip from "react-tooltip";
 import Share from "../Share/Share";
 
-function DetailsSurvey({ surveyProps }) {
+function DetailsSurvey({ surveyProps, surveyOrResults }) {
+  console.log(surveyProps);
   return (
     <div className="div-details">
       <div className="div-number">
@@ -20,6 +21,7 @@ function DetailsSurvey({ surveyProps }) {
       <div className="div-number">
         <div className="margin-auto" data-tip="Share">
           <Share
+            surveyOrResults={surveyOrResults}
             surveyId={surveyProps._id}
             surveyName={surveyProps.surveyname}
           />

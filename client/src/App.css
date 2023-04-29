@@ -958,7 +958,6 @@ input::placeholder {
   text-align: center;
   font-family: "Bitter";
   font-style: normal;
-
   word-break: break-word;
 }
 
@@ -1418,7 +1417,7 @@ input::placeholder {
   .float-right {
     float: left;
   }
-  .li-addSurvey {
+  .ul-addSurvey {
     margin-top: 46px;
   }
 }
@@ -1448,21 +1447,13 @@ input::placeholder {
   }
 }
 
-@media only screen and (max-width: 532px) {
-  .button-end {
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    font-size: 18px;
-    background: white;
-    color: #2563eb;
-    font-weight: 600;
-    margin-right: 50px;
-    float: right;
-    border: 3px solid #2563eb;
+@media only screen and (max-width: 537px) {
+  .button-end,
+  .button-next  {
     right: -35px;
-    bottom: 5%;
-    position: absolute;
+  }
+  .button-back {
+    left: 1px;
   }
 }
 

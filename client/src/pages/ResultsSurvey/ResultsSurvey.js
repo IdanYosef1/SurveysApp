@@ -1,5 +1,5 @@
 import { Card } from "react-bootstrap";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import history from "../../myCreatedHistory";
 import React from "react";
@@ -7,11 +7,34 @@ import { nanoid } from "nanoid";
 import Chart from "../../Components/Charts/Chart";
 import ButtonNext from "../../Components/Buttons/ButtonNext";
 import ButtonBack from "../../Components/Buttons/ButtonBack";
+import { getById } from "../../axios";
+import { useParams } from "react-router-dom";
+
+const urlSurveys = process.env.REACT_APP_SURVEYS_URL;
 
 function ResultsSurvey() {
-  const store = useSelector((state) => state.currentSurvey);
+  const store = useSelector((state) => state);
+  const [questions, setQuestions] = useState([
+    { answers: [{ _id: "", answer: "", votes: 0 }], question: "" },
+  ]);
+  const [surveyName, setSurveyName] = useState("");
+
   const [i, setI] = useState(0);
+  const { id } = useParams();
   const colors = ["#53829F", "#5DADE2", "#2E86C1", "#21618C", "#154360"];
+
+  useEffect(() => {
+    async function getSurvey() {
+      try {
+        const data = (await getById(urlSurveys, id, store.token)).data;
+        setSurveyName(data.surveyname);
+        setQuestions(data.questions);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    getSurvey();
+  }, [id, store.token]);
 
   const nextResult = () => {
     setI(i + 1);
@@ -30,11 +53,15 @@ function ResultsSurvey() {
     }
   };
 
-  const data = store.questions[i].answers.map((obj, index) => {
+  let numOfParticipants = questions[i].answers.reduce(
+    (sum, answer) => sum + answer.votes,
+    0
+  );
+  const data = questions[i].answers.map((obj, index) => {
     const ratio =
-      obj.votes === 0 && store.numOfParticipants === 0
+      obj.votes === 0 && numOfParticipants === 0
         ? 0
-        : obj.votes / store.numOfParticipants;
+        : obj.votes / numOfParticipants;
     return {
       id: nanoid(),
       title: obj.answer,
@@ -58,7 +85,7 @@ function ResultsSurvey() {
   });
 
   const isContinuation =
-    i + 2 <= store.questions.length ? (
+    i + 2 <= questions.length ? (
       <ButtonNext func={nextResult} />
     ) : (
       <button className="button-end" onClick={finishResults}>
@@ -70,11 +97,11 @@ function ResultsSurvey() {
 
   return (
     <div>
-      <h1 className="h1-surveyname">{store.surveyname}</h1>
+      <h1 className="h1-surveyname">{surveyName}</h1>
       <Card className="card-results">
         <Card.Body className="card-body">
           <div className="div-chart">
-            <h3 className="h3-results"> {store.questions[i].question}</h3>
+            <h3 className="h3-results"> {questions[i].question}</h3>
             <br />
             <Chart data={data} max={max} equal={equal} />
             <br />

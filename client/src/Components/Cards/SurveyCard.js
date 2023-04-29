@@ -81,7 +81,7 @@ function SurveyCard({
 
   const results = () => {
     dispatch(updateSurvey(surveyProps));
-    history.push("/results");
+    history.push(`/results/${surveyProps._id}`);
   };
 
   const view = () => {
@@ -165,13 +165,13 @@ function SurveyCard({
       <Card.Subtitle className="mb-2 text-muted">
         <Timer date={new Date(surveyProps.expiredDate).getTime()} />
       </Card.Subtitle>
-      <DetailsSurvey surveyProps={surveyProps} />
+      <DetailsSurvey surveyProps={surveyProps} surveyOrResults={"survey"} />
       {isFillOut} {isAdmin}
     </div>
   ) : (
     <div className="div-SurveyCard-Results">
       <br />
-      <DetailsSurvey surveyProps={surveyProps} />
+      <DetailsSurvey surveyProps={surveyProps} surveyOrResults={"results"} />
       <button className="viewResults" onClick={results}>
         View results
       </button>

@@ -266,7 +266,7 @@ function AddSurvey() {
 
   const showQuestions = questions.map((question, index) => (
     <Questions
-      key={index}
+      key={question.id}
       index={index}
       question={question}
       changeDetails={changeDetails}

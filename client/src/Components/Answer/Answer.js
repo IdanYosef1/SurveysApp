@@ -1,6 +1,6 @@
-function Answer({ index, obj, setCheckBox }) {
+function Answer({ obj, setCheckBox }) {
   return (
-    <div key={index} className="div-answer">
+    <div key={obj._id} className="div-answer">
       <input
         type="radio"
         className="radio"

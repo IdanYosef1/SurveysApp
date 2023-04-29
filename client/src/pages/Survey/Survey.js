@@ -89,6 +89,8 @@ function Survey() {
     try {
       if (answering.replied.find((answeringID) => answeringID === id)) {
         setMessage("You have already completed the survey");
+      } else if (new Date() >= new Date(survey.expiredDate)) {
+        setMessage("The survey is closed");
       } else {
         await updateData(urlSurveys, id, survey, store.token);
         await updateData(
@@ -147,15 +149,8 @@ function Survey() {
   const showH1 = survey.questions ? survey.questions[i].question : null;
 
   const showAnswers = survey.questions
-    ? survey.questions[i].answers.map((obj, index) => {
-        return (
-          <Answer
-            key={index}
-            index={index}
-            obj={obj}
-            setCheckBox={setCheckBox}
-          />
-        );
+    ? survey.questions[i].answers.map((obj) => {
+        return <Answer key={obj._id} obj={obj} setCheckBox={setCheckBox} />;
       })
     : null;
 

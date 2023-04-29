@@ -44,7 +44,7 @@ function AppRouter() {
       <ProtectedRoute path="/addsurvey" component={AddSurvey} />
       <ProtectedRoute path="/survey/:id" component={Survey} />
       <ProtectedRoute path="/approvalOfSurvey/survey/:id" component={Survey} />
-      <ProtectedRoute path="/results" component={ResultsSurvey} />
+      <ProtectedRoute path="/results/:id" component={ResultsSurvey} />
       <ProtectedRoute
         path="/approvalOfSurveys"
         component={ApprovalSurveys}

@@ -2,12 +2,12 @@ import React from "react";
 import { BsShare } from "react-icons/bs";
 import { RWebShare } from "react-web-share";
 
-const Share = ({ surveyId, surveyName }) => {
+const Share = ({ surveyOrResults, surveyId, surveyName }) => {
   return (
     <div>
       <RWebShare
         data={{
-          url: `https://surveysapp-frontend.onrender.com/survey/${surveyId}`,
+          url: `https://surveysapp-frontend.onrender.com/#/${surveyOrResults}/${surveyId}`,
           title: `Survey ${surveyName}`,
         }}
         onClick={() => console.log("shared successfully!")}

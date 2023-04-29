@@ -3,7 +3,6 @@ import ReactTooltip from "react-tooltip";
 import Share from "../Share/Share";
 
 function DetailsSurvey({ surveyProps, surveyOrResults }) {
-  console.log(surveyProps);
   return (
     <div className="div-details">
       <div className="div-number">

@@ -1,4 +1,4 @@
-import img from "../../assets/images/urban-no-data-found-2.png";
+import NoResults from "../NoResults/NoResults";
 
 function Surveys({ text, h1, activeOrInactive }) {
   return (
@@ -9,10 +9,7 @@ function Surveys({ text, h1, activeOrInactive }) {
         {activeOrInactive.length !== 0 ? (
           activeOrInactive
         ) : (
-          <div className="margin-auto">
-            <img src={img} alt="undefined" className="img-surveys" />
-            <span className="span-surveys">{text}</span>
-          </div>
+          <NoResults text={text} />
         )}
       </div>
       <br />

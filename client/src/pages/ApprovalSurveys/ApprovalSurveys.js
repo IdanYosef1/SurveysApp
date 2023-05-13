@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import SurveyCard from "../../Components/Cards/SurveyCard";
 import Surveys from "../../Components/Cards/Surveys";
-import MainSpinner from "../Main/Spinner";
+import MainSpinner from "../../Components/Spinner/Spinner";
 
 function ApprovalSurveys({ mainBool, setMainBool }) {
   const store = useSelector((state) => state);

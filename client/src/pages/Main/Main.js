@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import Menu from "../../Components/Menu/Menu";
 import Surveys from "../../Components/Cards/Surveys";
 import SurveyCard from "../../Components/Cards/SurveyCard";
-import MainSpinner from "./Spinner";
+import MainSpinner from "../../Components/Spinner/Spinner";
 
 const urlSurveys = process.env.REACT_APP_SURVEYS_URL;
 const urlAnswerings = process.env.REACT_APP_ANSWERINGS_URL;

@@ -3,7 +3,6 @@ import MainDashboardEntry from "./Components/Utilities/MainDashboardEntry";
 import AddSurvey from "./pages/AddSurvey/AddSurvey";
 import ApprovalSurveys from "./pages/ApprovalSurveys/ApprovalSurveys";
 import RequestStatus from "./pages/RequestStatus/RequestStatus";
-import ResultsSurvey from "./pages/ResultsSurvey/ResultsSurvey";
 import ShareSurvey from "./pages/ShareSurvey/ShareSurvey";
 import SignIn from "./pages/SignIn/Sign-In";
 import SignUp from "./pages/SignUp/Sign-Up";
@@ -14,6 +13,7 @@ import { useEffect, useState } from "react";
 import { getById } from "./axios";
 import { updateAwaitingsApproval } from "./Redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import Results from "./pages/Results/Results";
 
 const urlUsers = process.env.REACT_APP_USERS_URL;
 
@@ -44,7 +44,7 @@ function AppRouter() {
       <ProtectedRoute path="/addsurvey" component={AddSurvey} />
       <ProtectedRoute path="/survey/:id" component={Survey} />
       <ProtectedRoute path="/approvalOfSurvey/survey/:id" component={Survey} />
-      <ProtectedRoute path="/results/:id" component={ResultsSurvey} />
+      <ProtectedRoute path="/results/:id" component={Results} />
       <ProtectedRoute
         path="/approvalOfSurveys"
         component={ApprovalSurveys}
